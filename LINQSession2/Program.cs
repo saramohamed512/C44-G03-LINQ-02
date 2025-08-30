@@ -27,7 +27,18 @@ namespace LINQSession2
             //    Console.WriteLine(product);
             //}
             #endregion
-        
+
+            #endregion
+            #region Generation Operators
+            //var Result = Enumerable.Range(0, 100);
+            //Result = Enumerable.Repeat(3, 100);
+            //var List=Enumerable.Empty<Product>();
+            //List<Product> list = new List<Product>();
+            
+            //foreach (var result in Result) { 
+            //    Console.Write($"{result} ");
+            
+            //}
             #endregion
         }
     }
