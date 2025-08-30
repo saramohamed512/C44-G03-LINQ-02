@@ -73,6 +73,88 @@ namespace LINQSession2
             //Console.WriteLine(item);
             //}
             #endregion
+            #region Grouping Operators
+            //Groupby
+            #region Get Products Grouped By Category
+            //var Result = ListGenerator.ProductsList.GroupBy(P => P.Category);
+            //var Result = from P in ListGenerator.ProductsList
+            //             group P by P.Category;
+            //foreach (var category in Result)
+            //{
+            //    Console.WriteLine(category.Key);
+            //    foreach (var product in category)
+            //    {
+            //        Console.WriteLine($"     {product.ProductName}");
+            //    }
+
+            //}
+
+            #endregion
+            #region Get Products That Out of Stock Grouped By Category
+            //var Result = ListGenerator.ProductsList.Where(P => P.UnitsInStock == 0).GroupBy(P => P.Category);
+            //var Result = from P in ListGenerator.ProductsList
+            //             where P.UnitsInStock == 0
+            //             group P by P.Category;
+            //foreach (var category in Result)
+            //{
+            //    Console.WriteLine(category.Key);
+            //    foreach (var product in category)
+            //    {
+            //        Console.WriteLine($"     {product.ProductName}");
+            //    }
+
+            //}
+            #endregion
+            #region Get Products In Stock Grouped By Category That Contain More Than 10 Products
+            //var Result =ListGenerator.ProductsList.Where(P=>P.UnitsInStock>0)
+            //                                       .GroupBy(P=>P.Category)
+            //                                       .Where(P=>P.Count()>10);  
+            //var Result = from P in ListGenerator.ProductsList
+            //             where P.UnitsInStock > 0
+            //             group P by P.Category
+            //             into category
+            //             where category.Count()>10
+            //             select category;
+            //foreach (var category in Result)
+            //{
+            //    Console.WriteLine(category.Key);
+            //    foreach (var product in category)
+            //    {
+            //        Console.WriteLine($"     {product.ProductName}");
+            //    }
+
+            //}
+            #endregion
+            #region Get Caategory Name Of Products In Stock That Contain More Than 10 Products and Number of Products in Each Category
+            //var Result = ListGenerator.ProductsList.Where(P => P.UnitsInStock > 0)
+            //                                       .GroupBy(P => P.Category)
+            //                                       .Where(P => P.Count() > 10)
+            //                                       .Select(X=> new
+            //                                       {
+            //                                           CategoryNmae=X.Key,
+            //                                           CountOfProducts=X.Count(),
+            //                                       });
+            //foreach (var item in Result) { 
+            //Console.WriteLine(item);
+            //}
+
+            //var Result = from P in ListGenerator.ProductsList
+            //             where P.UnitsInStock > 0
+            //             group P by P.Category
+            //             into category
+            //             where category.Count() > 10
+            //             select new
+            //             {
+            //                 CategoryNmae = category.Key,
+            //                 CountOfProducts = category.Count(),
+            //             };
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #endregion
         }
     }
 }
