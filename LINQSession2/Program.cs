@@ -53,6 +53,16 @@ namespace LINQSession2
             //Console.Write($"{item} ");
             //}
             #endregion
+            #region Quantifire Operators
+            //var Result = ListGenerator.ProductsList.Any();
+            //var Result = ListGenerator.ProductsList.Any(P=>P.UnitsInStock>0);
+
+            //var Result = ListGenerator.ProductsList.All(P => P.UnitsInStock == 0);
+            //var Seq01 = Enumerable.Range(0, 100);
+            //var Seq02 = Enumerable.Range(50, 100);
+            //var Result= Seq01.SequenceEqual(Seq02);
+            //Console.WriteLine(Result);
+            #endregion
         }
     }
 }
