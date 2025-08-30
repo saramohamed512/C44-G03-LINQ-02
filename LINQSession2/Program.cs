@@ -63,6 +63,16 @@ namespace LINQSession2
             //var Result= Seq01.SequenceEqual(Seq02);
             //Console.WriteLine(Result);
             #endregion
+            #region Zipping Operators
+            //string[] Names = { "Ali", "Sara", "Mohamed", "Menna" };
+            //int[] Numbers=Enumerable.Range(1, 10).ToArray();
+            //char[] Chars = { 'a', 'b', 'c', 'd' , 'e'};
+            ////var Result=Names.Zip(Chars);
+            //var Result = Names.Zip(Numbers,Chars);
+            //foreach (var item in Result) {
+            //Console.WriteLine(item);
+            //}
+            #endregion
         }
     }
 }
