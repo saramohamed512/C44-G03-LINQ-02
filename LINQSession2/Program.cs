@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace LINQSession2
@@ -188,6 +189,21 @@ namespace LINQSession2
             ////var Result = Numbers.TakeWhile ((N, I) => N > I);
             //var Result = Numbers.SkipWhile(N => N % 3!=0);
             //foreach (var N in Result) {
+            //    Console.WriteLine(N);
+            //}
+            #endregion
+            #region Let & Into
+            //List<string> Names = new List<string>() { "Ali", "Sara", "Mohamed", "Menna" };
+            //var Result = from N in Names
+            //             select Regex.Replace(N, "[AOUIEouie]", string.Empty)
+            //             into NoVoweNmaes
+            //             where NoVoweNmaes.Length > 3
+            //             select NoVoweNmaes;
+            //var Result = from N in Names
+            //             let NoVoweNmaes= Regex.Replace(N, "[AOUIEouie]", string.Empty)              
+            //             where NoVoweNmaes.Length > 3
+            //             select NoVoweNmaes;
+            //foreach (var N in Result) { 
             //    Console.WriteLine(N);
             //}
             #endregion
