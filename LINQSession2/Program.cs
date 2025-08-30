@@ -155,6 +155,42 @@ namespace LINQSession2
             #endregion
 
             #endregion
+            #region Partitioning Operators
+            //var Result = ListGenerator.ProductsList.Where(P=>P.UnitsInStock==0).Take(10);
+            //var Result = ListGenerator.ProductsList.Skip(10).Skip(10);
+            //var Result = ListGenerator.ProductsList.TakeLast(10);
+            //var Result = ListGenerator.ProductsList.SkipLast(10);
+
+            //=============================================================================
+            //var Page01= ListGenerator.ProductsList.Take(10);
+            //var Page02 = ListGenerator.ProductsList.Skip(10).Take(10);
+            //var Page03 = ListGenerator.ProductsList.Skip(10).Skip(10).Take(10);
+            //Console.WriteLine("=====================Page01=====================");
+
+            //foreach (var item in Page01)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("=====================Page02=====================");
+
+            //foreach (var item in Page02)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("=====================Page03=====================");
+
+            //foreach (var item in Page03)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //=============================================================================
+            //int[] Numbers = { 5, 6, 7, 1, 2, 4, 8 };
+            ////var Result = Numbers.TakeWhile ((N, I) => N > I);
+            //var Result = Numbers.SkipWhile(N => N % 3!=0);
+            //foreach (var N in Result) {
+            //    Console.WriteLine(N);
+            //}
+            #endregion
         }
     }
 }
