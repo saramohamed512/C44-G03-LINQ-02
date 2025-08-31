@@ -1,9 +1,12 @@
 ﻿using Day_01_G03;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
 using System.Threading;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LINQSession2Ass
 {
@@ -123,7 +126,7 @@ namespace LINQSession2Ass
             #region 3.Create one sequence that contains the common first letter from both product and customer names.
             //var commonFirstLetters = productFirstLetters.Intersect(customerFirstLetters);
 
-   
+
             //foreach (var letter in commonFirstLetters.OrderBy(l => l))
             //{
             //    Console.WriteLine(letter);
@@ -146,13 +149,70 @@ namespace LINQSession2Ass
 
             //var allLastThreeChars = productLastThreeChars.Concat(customerLastThreeChars);
 
-          
+
             //foreach (var chars in allLastThreeChars)
             //{
             //    Console.WriteLine(chars);
             //}
             #endregion
             #endregion
+
+            #region LINQ - Partitioning Operators
+            #region 1.Get the first 3 orders from customers in Washington
+            //var washingtonCustomers = ListGenerator.CustomersList
+            //.Where(c => c.Region == "WA");
+
+            //var first3WashingtonOrders = washingtonCustomers
+            //    .SelectMany(c => c.Orders)
+            //    .Take(3);
+
+
+            //foreach (var order in first3WashingtonOrders)
+            //{
+            //    Console.WriteLine(order);
+            //}
+            #endregion
+            #region 2.Get all but the first 2 orders from customers in Washington.
+            //var allButFirst2WashingtonOrders = washingtonCustomers
+            //.SelectMany(c => c.Orders)
+            //.Skip(2);
+
+            //foreach (var order in allButFirst2WashingtonOrders)
+            //{
+            //    Console.WriteLine(order);
+            //}
+            #endregion
+            #region 3.Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result3 = numbers.TakeWhile((n, index) => n >= index);
+
+            //foreach (var num in result3)
+            //{
+            //    Console.WriteLine(num);
+            //}
+            #endregion
+            #region 4.Get the elements of the array starting from the first element divisible by 3.
+            //var result4 = numbers.SkipWhile(n => n % 3 != 0);
+
+
+            //foreach (var num in result4)
+            //{
+            //    Console.WriteLine(num);
+            //}
+            #endregion
+            #region 5.Get the elements of the array starting from the first element less than its position.
+            var result5 = numbers.SkipWhile((n, index) => n >= index);
+
+          
+            foreach (var num in result5)
+            {
+                Console.WriteLine(num);
+            }
+            #endregion
+
+            #endregion
+
+
 
 
 
