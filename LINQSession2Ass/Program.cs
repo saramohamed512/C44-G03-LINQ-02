@@ -1,4 +1,5 @@
 ﻿using Day_01_G03;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
@@ -11,7 +12,7 @@ namespace LINQSession2Ass
         static void Main(string[] args)
         {
 
-         
+
 
             #region LINQ - Aggregate Operators
             #region 1.Get the total units in stock for each product category.
@@ -82,7 +83,7 @@ namespace LINQSession2Ass
             // .GroupBy(p => p.Category)
             // .Select(g => new { Category = g.Key, AveragePrice = g.Average(p => p.UnitPrice) });
 
-          
+
             //foreach (var item in averagePriceByCategory)
             //{
             //    Console.WriteLine($"{item.Category}: {item.AveragePrice:C}");
@@ -91,6 +92,74 @@ namespace LINQSession2Ass
             #endregion
 
             #endregion
+            #region   LINQ - Set Operators
+            #region 1.Find the unique Category names from Product List
+            //var uniqueCategories = ListGenerator.ProductsList
+            //.Select(p => p.Category)
+            //.Distinct();
+
+
+            //foreach (var category in uniqueCategories)
+            //{
+            //    Console.WriteLine(category);
+            //}
+            #endregion
+            #region 2.Produce a Sequence containing the unique first letter from both product and customer names.
+            //var productFirstLetters = ListGenerator.ProductsList
+            //.Select(p => p.ProductName[0])
+            //.Distinct();
+
+            //var customerFirstLetters = ListGenerator.CustomersList
+            //    .Select(c => c.CustomerName[0])
+            //    .Distinct();
+
+            //var uniqueFirstLetters = productFirstLetters.Union(customerFirstLetters);
+
+            //foreach (var letter in uniqueFirstLetters.OrderBy(l => l))
+            //{
+            //    Console.WriteLine(letter);
+            //}
+            #endregion
+            #region 3.Create one sequence that contains the common first letter from both product and customer names.
+            //var commonFirstLetters = productFirstLetters.Intersect(customerFirstLetters);
+
+   
+            //foreach (var letter in commonFirstLetters.OrderBy(l => l))
+            //{
+            //    Console.WriteLine(letter);
+            //}
+            #endregion
+            #region 4.Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+            //var productOnlyFirstLetters = productFirstLetters.Except(customerFirstLetters);
+
+            //foreach (var letter in productOnlyFirstLetters.OrderBy(l => l))
+            //{
+            //    Console.WriteLine(letter);
+            //}
+            #endregion
+            #region 5.Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates
+            //var productLastThreeChars = ListGenerator.ProductsList
+            //   .Select(p => p.ProductName.Length >= 3 ? p.ProductName.Substring(p.ProductName.Length - 3) : p.ProductName);
+
+            //var customerLastThreeChars = ListGenerator.CustomersList
+            //    .Select(c => c.CustomerName.Length >= 3 ? c.CustomerName.Substring(c.CustomerName.Length - 3) : c.CustomerName);
+
+            //var allLastThreeChars = productLastThreeChars.Concat(customerLastThreeChars);
+
+          
+            //foreach (var chars in allLastThreeChars)
+            //{
+            //    Console.WriteLine(chars);
+            //}
+            #endregion
+            #endregion
+
+
+
+
+
+
+
 
         }
     }
