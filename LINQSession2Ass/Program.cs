@@ -223,40 +223,71 @@ namespace LINQSession2Ass
 
             #endregion
             #region 2.Return a grouped a list of products only for categories that have at least one product that is out of stock.
-            var categoriesWithOutOfStock = ListGenerator.ProductsList
-              .GroupBy(p => p.Category)
-              .Where(g => g.Any(p => p.UnitsInStock == 0))
-              .Select(g => new { Category = g.Key, Products = g.ToList() });
+            //var categoriesWithOutOfStock = ListGenerator.ProductsList
+            //  .GroupBy(p => p.Category)
+            //  .Where(g => g.Any(p => p.UnitsInStock == 0))
+            //  .Select(g => new { Category = g.Key, Products = g.ToList() });
 
-      
-            foreach (var category in categoriesWithOutOfStock)
-            {
-                Console.WriteLine($"{category.Category}:");
-                foreach (var product in category.Products.Where(p => p.UnitsInStock == 0))
-                {
-                    Console.WriteLine($"  {product.ProductName} (Out of stock)");
-                }
-            }
+
+            //foreach (var category in categoriesWithOutOfStock)
+            //{
+            //    Console.WriteLine($"{category.Category}:");
+            //    foreach (var product in category.Products.Where(p => p.UnitsInStock == 0))
+            //    {
+            //        Console.WriteLine($"  {product.ProductName} (Out of stock)");
+            //    }
+            //}
             #endregion
             #region 3.Return a grouped a list of products only for categories that have all of their products in stock.
-           // var categoriesAllInStock = ListGenerator.ProductsList
-           //.GroupBy(p => p.Category)
-           //.Where(g => g.All(p => p.UnitsInStock > 0))
-           //.Select(g => new { Category = g.Key, Products = g.ToList() });
+            // var categoriesAllInStock = ListGenerator.ProductsList
+            //.GroupBy(p => p.Category)
+            //.Where(g => g.All(p => p.UnitsInStock > 0))
+            //.Select(g => new { Category = g.Key, Products = g.ToList() });
 
-           // foreach (var category in categoriesAllInStock)
-           // {
-           //     Console.WriteLine($"{category.Category}:");
-           //     foreach (var product in category.Products)
-           //     {
-           //         Console.WriteLine($"  {product.ProductName} ({product.UnitsInStock} in stock)");
-           //     }
-           // }
+            // foreach (var category in categoriesAllInStock)
+            // {
+            //     Console.WriteLine($"{category.Category}:");
+            //     foreach (var product in category.Products)
+            //     {
+            //         Console.WriteLine($"  {product.ProductName} ({product.UnitsInStock} in stock)");
+            //     }
+            // }
             #endregion
 
             #endregion
+            #region LINQ – Grouping Operators
+            #region 1.Use group by to partition a list of numbers by their remainder when divided by 5
+            //List<int> numbersList = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+
+            //var numbersByRemainder = numbersList.GroupBy(n => n % 5);
 
 
+            //foreach (var group in numbersByRemainder.OrderBy(g => g.Key))
+            //{
+            //    Console.WriteLine($"Remainder {group.Key}: {string.Join(", ", group)}");
+            //}
+
+            #endregion
+            #region 2.Use group by to partition a list of words by their first letter
+            string[] wordsArray = { "from", "salt", "earn", "last", "near", "form" };
+
+            //var wordsByFirstLetter = wordsArray.GroupBy(word => word[0]);
+
+            //foreach (var group in wordsByFirstLetter.OrderBy(g => g.Key))
+            //{
+            //    Console.WriteLine($"'{group.Key}': {string.Join(", ", group)}");
+            //}
+            #endregion
+            #region 3.Use Group By with a custom comparer that matches words that are consists of the same Characters Together
+            //var wordsBySameCharacters = wordsArray.GroupBy(word => new string(word.OrderBy(c => c).ToArray()));
+
+        
+            //foreach (var group in wordsBySameCharacters)
+            //{
+            //    Console.WriteLine($"Characters '{group.Key}': {string.Join(", ", group)}");
+            //}
+            #endregion
+            #endregion
 
 
 
