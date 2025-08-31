@@ -1,5 +1,8 @@
 ﻿using Day_01_G03;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.InteropServices;
@@ -156,7 +159,6 @@ namespace LINQSession2Ass
             //}
             #endregion
             #endregion
-
             #region LINQ - Partitioning Operators
             #region 1.Get the first 3 orders from customers in Washington
             //var washingtonCustomers = ListGenerator.CustomersList
@@ -201,16 +203,62 @@ namespace LINQSession2Ass
             //}
             #endregion
             #region 5.Get the elements of the array starting from the first element less than its position.
-            var result5 = numbers.SkipWhile((n, index) => n >= index);
+            //var result5 = numbers.SkipWhile((n, index) => n >= index);
 
           
-            foreach (var num in result5)
-            {
-                Console.WriteLine(num);
-            }
+            //foreach (var num in result5)
+            //{
+            //    Console.WriteLine(num);
+            //}
             #endregion
 
             #endregion
+            #region LINQ - Quantifiers
+            string[] dictionaryWords = File.ReadAllLines("dictionary_english.txt");
+
+
+            #region 1.Determine if any of the words in dictionary_english.txt(Read dictionary_english.txt into Array of String First) contain the substring 'ei'.
+            //bool hasEi = dictionaryWords.Any(word => word.Contains("ei"));
+            //Console.WriteLine(hasEi);
+
+            #endregion
+            #region 2.Return a grouped a list of products only for categories that have at least one product that is out of stock.
+            var categoriesWithOutOfStock = ListGenerator.ProductsList
+              .GroupBy(p => p.Category)
+              .Where(g => g.Any(p => p.UnitsInStock == 0))
+              .Select(g => new { Category = g.Key, Products = g.ToList() });
+
+      
+            foreach (var category in categoriesWithOutOfStock)
+            {
+                Console.WriteLine($"{category.Category}:");
+                foreach (var product in category.Products.Where(p => p.UnitsInStock == 0))
+                {
+                    Console.WriteLine($"  {product.ProductName} (Out of stock)");
+                }
+            }
+            #endregion
+            #region 3.Return a grouped a list of products only for categories that have all of their products in stock.
+           // var categoriesAllInStock = ListGenerator.ProductsList
+           //.GroupBy(p => p.Category)
+           //.Where(g => g.All(p => p.UnitsInStock > 0))
+           //.Select(g => new { Category = g.Key, Products = g.ToList() });
+
+           // foreach (var category in categoriesAllInStock)
+           // {
+           //     Console.WriteLine($"{category.Category}:");
+           //     foreach (var product in category.Products)
+           //     {
+           //         Console.WriteLine($"  {product.ProductName} ({product.UnitsInStock} in stock)");
+           //     }
+           // }
+            #endregion
+
+            #endregion
+
+
+
+
 
 
 
