@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36408.4 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQSession2", "LINQSession2\LINQSession2.csproj", "{EFAF98EA-E3EE-4E35-AE85-A3AC98FA3C08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQSession2Ass", "LINQSession2Ass\LINQSession2Ass.csproj", "{1AB78BDF-94B3-4D0D-8A16-FC37941A7CB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EFAF98EA-E3EE-4E35-AE85-A3AC98FA3C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFAF98EA-E3EE-4E35-AE85-A3AC98FA3C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFAF98EA-E3EE-4E35-AE85-A3AC98FA3C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB78BDF-94B3-4D0D-8A16-FC37941A7CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB78BDF-94B3-4D0D-8A16-FC37941A7CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB78BDF-94B3-4D0D-8A16-FC37941A7CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB78BDF-94B3-4D0D-8A16-FC37941A7CB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
